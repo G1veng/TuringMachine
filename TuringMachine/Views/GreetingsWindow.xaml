@@ -1,0 +1,38 @@
+﻿<Window x:Class="TuringMachine.Views.GreetingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TuringMachine.ViewModels"
+        xmlns:local="clr-namespace:TuringMachine.Views"
+        mc:Ignorable="d"
+        Title="InformationWindow" Height="250" Width="450">
+    <Window.DataContext>
+        <vm:GreetingsWindowViewModel/>
+    </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding CloseApplicationCommand}" Gesture="ESC"/>
+        
+    </Window.InputBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Turing Machine programm" TextWrapping="Wrap" TextAlignment="Center" Margin="5"/>
+        <TextBlock Grid.Row="0" Margin="5, 40, 5, 0" Text="Program starts with '0' function." TextWrapping="Wrap" 
+        TextAlignment="Justify"/>
+        <TextBlock Grid.Row="0" Margin="5, 60, 5, 0" Text="Use 'l', 'r' and 'h' to move head." TextWrapping="Wrap" 
+        TextAlignment="Justify"/>
+        <TextBlock Grid.Row="0" Margin="5, 80, 5, 0" Text="Write 's' in final funtion to end the programm." TextWrapping="Wrap" 
+        TextAlignment="Justify"/>
+        <TextBlock Grid.Row="0" Margin="5, 100, 5, 0" Text="Template of program:" TextWrapping="Wrap" 
+        TextAlignment="Justify"/>
+        <TextBlock Grid.Row="0" Margin="5, 115, 5, 0" Text="name_of_start_function what_finding for_what_replacing where_moving next_function" TextWrapping="Wrap" 
+        TextAlignment="Justify"/>
+        <TextBlock Grid.Row="0" Margin="5, 145, 5, 0" Text="'_' is a blank space" TextWrapping="Wrap" 
+        TextAlignment="Justify"/>
+        <Button Grid.Row="1" Height="25" Width="35" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 0, 0, 0" Content="OK"
+                Command="{Binding CloseApplicationCommand}"/>
+    </Grid>
+</Window>
